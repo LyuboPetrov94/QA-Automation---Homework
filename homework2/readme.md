@@ -6,7 +6,7 @@
 - осново съдържание
 - втора странична лента (набор от активности)
 
-![](homework2/hw2.png)
+![](https://github.com/LyuboPetrov94/QA-Automation---Homework/blob/main/homework2/hw2.png)
 
 
 Създайте HTML структура която:
