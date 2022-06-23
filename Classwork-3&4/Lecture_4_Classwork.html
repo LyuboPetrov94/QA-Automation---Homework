@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectrue_4_Classwork</title>
+</head>
+<body>
+
+    <div> Брой въпроци от този кръг</div>
+    
+
+    <script type="text/javascript"> 
+
+        //информация за потребителя
+        let totalPointAmount            = 0;
+        let totalPriceAmount            = 0;
+        const maxNumberOfQuestions      = 5;
+        //const MAX_NUMBER_OF_QUESTIONS = 5; - към конвенциите, изписва се така ако константата е глобален индентификатор и не се променя
+         let questionTimeLimitInMinutes;
+
+        // данни свързани с първи въпрос
+        questionTimeLimitInMinutes      = 10;
+        //let firstQuestion               = "Кога е създадена българската държава? (време за отговор " + questionTimeLimitInMinutes + "минути)";
+        let firstQuestion               = `Кога е създадена българската държава? (време за отговор ${questionTimeLimitInMinutes} минути) `;
+        let firstQuestionPointAmount    = 4;
+        let firstQuestionCorrectAnswer  = 681;
+        // `` - символа се нарича интерполатор - интерполация - да вземеш една стойност и да я замениш с друга в контекста на символни низове
+        // ${} - екстрактва стойноста и я заменя в рамките на placeholder-a - няма нужда от "" и от + и се запазва форматирането
+        // първият вариат е когато има прост символен низ и няма променлива компонента
+
+
+
+        //задаваме въпроса
+        let firstQuestionAnswer          = prompt(firstQuestion);
+        let isFirstQuestionAnswerCorrect = firstQuestionCorrectAnswer == firstQuestionAnswer;
+        // console.log(firstQuestionCorrectAnswer)
+        // console.log(firstQuestionAnswer);
+        // console.log(firstQuestionCorrectAnswer == firstQuestionAnswer);
+        
+        // По-добър вариант за изпълнение на програмата
+
+        let gameDossier;
+
+        if(isFirstQuestionAnswerCorrect) {
+            console.log("Верен отговор");
+            alert("Браво");
+
+            /* аритметични оператори     // коментар в JS  , многоредов коментар се прави с /* и се затваря със * и / 
+            // + => събиране
+            // - => изваждане
+            // * => умножение
+            // / => деление
+             % => деление с остатък, целочислено деление , процент
+            */
+            totalPointAmount = totalPointAmount + firstQuestionPointAmount;
+            
+            let gameDossier = "Отговори вярно на въпрос 1";
+        }// По-добра идея е да ползваме променливи вместо да пишем целия въпрос в IF 
+        //if(firstQuestionCorrectAnswer == firstQuestionAnswer) {
+        //}
+        else {
+            console.log("Грешен отговор");
+            alert("Не позна");
+            //аритметика - калкулаиця на точките
+            //вариант 1 - една единствена променлива
+            totalPointAmount = totalPointAmount - (firstQuestionPointAmount / 2);
+
+            //вариант 2 - с допълнителна променлива
+            let pointAmount = firstQuestionPointAmount / 2;
+            totalPointAmount = totalPointAmount - pointAmount;
+
+            let gameDossier = "Отговори грешно на въпрос 1";
+
+        }
+
+        console.log(gameDossier);
+
+
+        let playerFirstName  = prompt("Как се казваш - първо име?");
+        let playerSecondName = prompt ("Как се казващ - фамилия?");
+        let playerAge        = prompt("На колко си години?");
+        let playerGender     = prompt("Какъв пол си?");
+
+        console.log (`Първо име ${playerFirstName}`);
+        console.log (`Фамилия ${playerSecondName} `);
+        console.log (`Възраст ${playerAge}`);
+        console.log (`пол ${playerGender}`);
+
+        alert("Всички данни са записани успешно");
+
+        let isPlayerUnderaged         = playerAge < 18;
+        let isPlayerAnAdult           = playerAge ==18;
+        let isPlayerIn35AgeCategory   = (playerAge >18)  &&  (playerAge <= 35);
+        // && - означава и - ако и двете неща са true, значи цялото е true , работи само между true или false
+        let isPlayerIn65AgeExactly    = playerAge == 65;
+    
+        if(isPlayerUnderaged){
+            totalPointAmount = 0;
+            totalPriceAmount = 0;
+        }
+        else if (isPlayerAnAdult){
+            totalPriceAmount = totalPriceAmount + 10;
+        }
+        else if(isPlayerIn35AgeCategory){
+            totalPriceAmount = totalPriceAmount +5;
+        }
+        else if(isPlayerIn65AgeExactly){
+            totalPriceAmount = totalPriceAmount + 60;
+        }
+        else{
+            totalPriceAmount = totalPriceAmount = 1;
+        }
+
+        totalPriceAmount = totalPriceAmount + (totalPointAmount * 10);
+
+        if(totalPriceAmount > 0){
+            console.log(`Получаваш сумата от ${totalPriceAmount}`);
+        }
+        else if(totalPriceAmount < 0){
+            console.log(`Дължиш сумата от ${totalPriceAmount}`);
+        }
+        else {
+            console.log ("Благодаря за участието");
+        }
+
+        /* може и да се използва варианта само с if без да се ползва else -> пример
+        if(totalPriceAmount > 0){
+            console.log(`Получаваш сумата от ${totalPriceAmount}`);
+        }
+        if(totalPriceAmount < 0){
+            console.log(`Дължиш сумата от ${totalPriceAmount}`);
+        }
+        if(totalPriceAmount == 0) {
+            console.log ("Благодаря за участието");
+        }
+        */
+       
+
+
+
+
+    
+    </script>
+    
+    <body>
+</html>
