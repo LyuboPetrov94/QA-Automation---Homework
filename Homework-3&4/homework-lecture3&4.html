@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мазето на Баба C++олана</title>
+</head>
+<body>
+    
+    <script>
+        // Задача 1
+        alert("Мазе бот v1 на Вашите услуги");
+
+        // Задача 2
+        let visitorFirstName    = prompt("Как се казваш? (първо име)");
+        let visitorLastName     = prompt("Как се казваш? (фамилия) ");
+        let visitorAge          = prompt("На колко години си?");
+        let visitorSex          = prompt("Какъв пол си? (мъж/жена)");
+
+        console.log(`Първо име ${visitorFirstName}`);
+        console.log(`Фамилия ${visitorLastName}`);
+        console.log(`Възраст ${visitorAge}`);
+        console.log(`Пол ${visitorSex}`);
+
+        let visitorMale   = visitorSex == "мъж";
+        let visitorFemale = visitorSex == "жена";
+        let visitorAdult  = visitorAge >= 18;
+        let visitorMinor  = visitorAge < 18;
+
+        let maleAdult = (visitorMale) && (visitorAdult);
+        let maleMinor = (visitorMale) && (visitorMinor);
+        let femaleAdult = (visitorFemale) && (visitorAdult);
+        let femaleMinor = (visitorFemale) && (visitorMinor);
+
+        if(maleAdult){
+            console.log (`Здравейте Г-н ${visitorLastName}`);
+        }
+        else if(femaleAdult){
+            console.log (`Здравейте Г-жо ${visitorLastName}`);
+        }
+        else if(maleMinor){
+            console.log(`Здрасти малкия! Не пускаме дечица тука! Бягай за БИРА!`);
+        }
+        else{
+            console.log(`Здрасти малката! Не пускаме дечица тука! Отивай да си играеш!`)
+        }
+
+        // Задача 3
+
+        let visitorId = Date.now();
+        console.log(visitorId);
+            // друг вариант, който ползвах е let visitorId = Math.floor(Math.random() * 100) * Math.floor(Math.random() * 100) * Math.floor(Math.random() * 100);
+
+        if(visitorMale){
+            alert(`Добре дошъл в мазето на баба ${visitorFirstName} ${visitorLastName}!
+        Ти се идентифицира с номер ${visitorId}.
+        Ти си на ${visitorAge} години`);
+        }
+        else{
+            alert(`Добре дошла в мазето на баба ${visitorFirstName} ${visitorLastName}!
+        Ти се идентифицира с номер ${visitorId}
+        Ти си на ${visitorAge} години`);
+        }
+
+        // Задача 4
+
+        let wine        ="ябълково вино";
+        let meat        = "пушено месо";
+        let jam         = "сливов мармалад";
+        let peppers     = "мариновани чушки";
+        let piggyBank   = "прасенце касичка";
+        
+        // Задача 5
+
+        let wineQty         = 10;
+        let meatQty         = 5;
+        let jamQty          = 9;
+        let peppersQty      = 4;
+        let piggyBankQty    = "184 лв. и 35 стотинки";
+
+        // Задача 6
+
+        let wineSignature       = "C7544";
+        let meatSignature       = "M7441";
+        let jamSignature        = "S6491";
+        let peppersSignature    = "P7485";
+        let piggyBankSignature  = "B6584"
+        
+        let wineUniqueId        = (`${wineSignature}_${wineQty}`);
+        let meatUniqueId        = (`${meatSignature}_${meatQty}`);
+        let jamUniqueId         = (`${jamSignature}_${jamQty}`);
+        let peppersUniqueId     = (`${peppersSignature}_${peppersQty}`);
+        let piggyBankUniqueId   = (`${piggyBankSignature}_${piggyBankQty}`);
+
+        // Задача 7
+
+        alert(`Отчет за продуктите в мазето 
+        (провери конзолата)`);
+
+        let wineTable       = (`Продукт - ${wine}; Количество:${wineQty}; Сериен номер:${wineUniqueId}`);
+        let meatTable       = (`Продукт - ${meat}; Количество:${meatQty}; Сериен номер:${meatUniqueId}`);
+        let jamTable        = (`Продукт - ${jam}; Количество:${jamQty}; Сериен номер:${jamUniqueId}`);
+        let peppersTable    = (`Продукт - ${peppers}; Количество:${peppersQty}; Сериен номер:${peppersUniqueId}`);
+        let piggyBankTable  = (`Продукт - ${piggyBank}; Количество:${piggyBankQty}; Сериен номер:${piggyBankUniqueId}`);
+
+        console.table([wineTable, meatTable, jamTable, peppersTable, piggyBankTable]);
+
+        // Задача 8
+
+        if(visitorAdult){
+            let donation = prompt ("Желаете ли да дарите пари за закупуване на нови продукти? да/не")
+            let donationYes = donation == "да";
+            let donationNo = donation == "не";
+        
+         if(donationYes){
+            let donationAmount = prompt ("Каква сума желаете да дарите?");
+            let donationTax = 1.2;
+            let donationTotal = donationAmount * donationTax;
+            
+            alert(`Сумата, която трябва да дарите с 20% ДДС е в размер на ${donationTotal} лв. `)
+         } 
+         else{
+            alert("БЕГАЙ ОТ ТУКА!!! СКРЪНДЗИ НЕ ИСКАМЕ!!!")
+         }
+    }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
