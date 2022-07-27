@@ -17,7 +17,7 @@
 
         if(divisonResult > 9)
         {
-            divisonResult = divisonResult.toString()[1];
+            divisonResult = +(divisonResult.toString()[1]);
         }
 
         return divisonResult;
@@ -40,7 +40,7 @@
 
         if(divisonResult > 9)
         {
-            divisonResult = divisonResult.toString()[1];
+            divisonResult = +(divisonResult.toString()[1]);
         }
 
         return divisonResult;
