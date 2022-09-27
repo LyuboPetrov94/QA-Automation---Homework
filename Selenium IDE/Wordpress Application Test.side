@@ -23,8 +23,8 @@
     }, {
       "id": "128cc530-1e12-4bab-9d5d-713f4122bf40",
       "comment": "",
-      "command": "executeScript",
-      "target": "\"(success) (base) (f)Login\"",
+      "command": "run",
+      "target": "(success) (base) (f)Login",
       "targets": [],
       "value": ""
     }, {
@@ -127,8 +127,8 @@
     }, {
       "id": "2a4a4b8a-af29-4e1a-a71e-ea96b72fa846",
       "comment": "",
-      "command": "executeScript",
-      "target": "\"(success) (base) (f)Login\"",
+      "command": "run",
+      "target": "(success) (base) (f)Login",
       "targets": [],
       "value": ""
     }, {
@@ -137,6 +137,17 @@
       "command": "open",
       "target": "http://127.0.0.1/wordpress/wp-admin/index.php",
       "targets": [],
+      "value": ""
+    }, {
+      "id": "7f54c397-a745-4c6c-86b5-35782b15c6bb",
+      "comment": "",
+      "command": "click",
+      "target": "css=#wp-admin-bar-menu-toggle .ab-icon",
+      "targets": [
+        ["css=#wp-admin-bar-menu-toggle .ab-icon", "css:finder"],
+        ["xpath=//li[@id='wp-admin-bar-menu-toggle']/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "7ccbc355-7312-437a-9172-4958167fc9f7",
@@ -220,8 +231,8 @@
     }, {
       "id": "413d77c4-6b4a-4466-9b8b-65331387b60b",
       "comment": "",
-      "command": "executeScript",
-      "target": "\"(success) (base) (f)Login\"",
+      "command": "run",
+      "target": "(success) (base) (f)Login",
       "targets": [],
       "value": ""
     }, {
@@ -235,24 +246,25 @@
       "id": "866caa27-7431-44f0-97f1-ba846c251f3e",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=#dashboard_activity .hndle",
+      "target": "id=wpbody-content",
       "targets": [
-        ["css=#dashboard_activity .hndle", "css:finder"],
-        ["xpath=//div[@id='dashboard_activity']/div/h2", "xpath:idRelative"],
-        ["xpath=//h2", "xpath:position"],
-        ["xpath=//h2[contains(.,'Activity')]", "xpath:innerText"]
+        ["id=wpbody-content", "id"],
+        ["css=#wpbody-content", "css:finder"],
+        ["xpath=//div[@id='wpbody-content']", "xpath:attributes"],
+        ["xpath=//div[@id='wpbody']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "d88bbf0f-7f87-4dce-8a38-da2d846ef9c3",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=#dashboard_primary .hndle",
+      "target": "css=#dashboard_activity .hndle",
       "targets": [
-        ["css=#dashboard_primary .hndle", "css:finder"],
-        ["xpath=//div[@id='dashboard_primary']/div/h2", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/div/h2", "xpath:position"],
-        ["xpath=//h2[contains(.,'WordPress Events and News')]", "xpath:innerText"]
+        ["css=#dashboard_activity .hndle", "css:finder"],
+        ["xpath=//div[@id='dashboard_activity']/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Activity')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
