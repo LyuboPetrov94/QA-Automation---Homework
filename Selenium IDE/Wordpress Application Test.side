@@ -1,0 +1,359 @@
+{
+  "id": "76365677-64b0-4eff-9802-ebf753dd81f6",
+  "version": "2.0",
+  "name": "Wordpress Application Test",
+  "url": "http://127.0.0.1/wordpress/wp-login.php",
+  "tests": [{
+    "id": "b0d91bd4-6ae6-411e-84fb-199e4058cc12",
+    "name": "(success) Login as Admin",
+    "commands": [{
+      "id": "2acf1e81-017c-458b-9dfc-512c440a0c38",
+      "comment": "",
+      "command": "store",
+      "target": "password",
+      "targets": [],
+      "value": "AUTH_PASSWORD"
+    }, {
+      "id": "feb384ff-6115-4984-a98c-d928e6f24bb5",
+      "comment": "",
+      "command": "store",
+      "target": "wp_admin",
+      "targets": [],
+      "value": "AUTH_USERNAME"
+    }, {
+      "id": "128cc530-1e12-4bab-9d5d-713f4122bf40",
+      "comment": "",
+      "command": "executeScript",
+      "target": "\"(success) (base) (f)Login\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4fab26c-abf0-4cd0-8afb-3e4c10a3e885",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1/wordpress/wp-admin/options-general.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "21b0ecca-1997-4334-b407-c81240677663",
+      "comment": "",
+      "command": "verifyTitle",
+      "target": "General Settings ‹ Net It QA CMS — WordPress",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9fcb6a18-54d8-4513-8e13-34db20c31045",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='wpbody-content']/div[3]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'General Settings')]", "xpath:innerText"]
+      ],
+      "value": "General Settings"
+    }, {
+      "id": "9d6eb5a7-73f8-49e7-98b1-262fce81c954",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=blogname",
+      "targets": [
+        ["id=blogname", "id"],
+        ["name=blogname", "name"],
+        ["css=#blogname", "css:finder"],
+        ["xpath=//input[@id='blogname']", "xpath:attributes"],
+        ["xpath=//div[@id='wpbody-content']/div[3]/form/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Net It QA CMS"
+    }, {
+      "id": "d467653c-6d12-4628-a5f6-34079d56d852",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.menu-icon-users > .wp-menu-name",
+      "targets": [
+        ["css=.menu-icon-users > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='menu-users']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[10]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "359bfe90-3cb9-4cb0-9f01-1cfc4f0358df",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1/wordpress/wp-admin/users.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4873d2d7-6316-4a63-a940-fe475ae12316",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=Add New",
+      "targets": [
+        ["linkText=Add New", "linkText"],
+        ["css=.page-title-action", "css:finder"],
+        ["xpath=(//a[contains(text(),'Add New')])[6]", "xpath:link"],
+        ["xpath=//div[@id='wpbody-content']/div[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[@href='http://127.0.0.1/wordpress/wp-admin/user-new.php'])[2]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd6dec6d-1803-4cd1-841c-9beb63d34e15",
+      "comment": "",
+      "command": "echo",
+      "target": "@Test finish successfully ",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "dac173d1-bbc6-4b22-a493-8724ed08a839",
+    "name": "(success) Login as Author",
+    "commands": [{
+      "id": "7ecafb83-3917-4264-83ce-9b8c309f04b8",
+      "comment": "",
+      "command": "store",
+      "target": "password",
+      "targets": [],
+      "value": "AUTH_PASSWORD"
+    }, {
+      "id": "5a31a05f-a7d6-4880-9491-2229e21924f7",
+      "comment": "",
+      "command": "store",
+      "target": "wp_author",
+      "targets": [],
+      "value": "AUTH_USERNAME"
+    }, {
+      "id": "2a4a4b8a-af29-4e1a-a71e-ea96b72fa846",
+      "comment": "",
+      "command": "executeScript",
+      "target": "\"(success) (base) (f)Login\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af78585c-dcec-4f9f-88d0-4b62cf993ca6",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1/wordpress/wp-admin/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ccbc355-7312-437a-9172-4958167fc9f7",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.menu-icon-post > .wp-menu-name",
+      "targets": [
+        ["css=.menu-icon-post > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='menu-posts']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[3]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd40ac58-bfb1-4ead-897f-0c98fec59099",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1/wordpress/wp-admin/edit.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "668dafdf-ecf7-4a92-aa94-73e8f0348443",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=Add New",
+      "targets": [
+        ["linkText=Add New", "linkText"],
+        ["css=.page-title-action", "css:finder"],
+        ["xpath=(//a[contains(text(),'Add New')])[3]", "xpath:link"],
+        ["xpath=//div[@id='wpbody-content']/div[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[@href='http://127.0.0.1/wordpress/wp-admin/post-new.php'])[3]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78ba91a1-552c-4402-9abf-0aee489f963a",
+      "comment": "",
+      "command": "click",
+      "target": "css=#wp-admin-bar-menu-toggle .ab-icon",
+      "targets": [
+        ["css=#wp-admin-bar-menu-toggle .ab-icon", "css:finder"],
+        ["xpath=//li[@id='wp-admin-bar-menu-toggle']/a/span", "xpath:idRelative"],
+        ["xpath=//div/ul/li/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5da39e7f-393e-483f-84a0-4879b898ce0b",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.menu-icon-settings > .wp-menu-name",
+      "targets": [
+        ["css=.menu-icon-settings > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='menu-settings']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[12]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87d4676c-a7ad-43b2-98d9-010e0c236ad8",
+      "comment": "",
+      "command": "echo",
+      "target": "@Test finish successfully ",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0ce57f31-1b16-40ad-bcf6-82a71f41242d",
+    "name": "(success) Login as Subscriber",
+    "commands": [{
+      "id": "825e5e4b-2468-44e8-b6f1-04c03c3896d1",
+      "comment": "",
+      "command": "store",
+      "target": "password",
+      "targets": [],
+      "value": "AUTH_PASSWORD"
+    }, {
+      "id": "6e067c69-f21a-47a1-a547-08928413a5a6",
+      "comment": "",
+      "command": "store",
+      "target": "wp_subscriber ",
+      "targets": [],
+      "value": "AUTH_USERNAME"
+    }, {
+      "id": "413d77c4-6b4a-4466-9b8b-65331387b60b",
+      "comment": "",
+      "command": "executeScript",
+      "target": "\"(success) (base) (f)Login\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46b68dbe-a5a8-4fc3-a4e1-11ee467379c7",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1/wordpress/wp-admin/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "866caa27-7431-44f0-97f1-ba846c251f3e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#dashboard_activity .hndle",
+      "targets": [
+        ["css=#dashboard_activity .hndle", "css:finder"],
+        ["xpath=//div[@id='dashboard_activity']/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Activity')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d88bbf0f-7f87-4dce-8a38-da2d846ef9c3",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#dashboard_primary .hndle",
+      "targets": [
+        ["css=#dashboard_primary .hndle", "css:finder"],
+        ["xpath=//div[@id='dashboard_primary']/div/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'WordPress Events and News')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "834de142-f13f-4e91-8e8d-01c6af711227",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.menu-icon-settings > .wp-menu-name",
+      "targets": [
+        ["css=.menu-icon-settings > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='menu-settings']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[12]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "614f8927-dd95-4841-bf5d-0f422d7f8846",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.menu-icon-post > .wp-menu-name",
+      "targets": [
+        ["css=.menu-icon-post > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='menu-posts']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[3]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "b31aa12e-0e1f-4a5a-879b-8abe8fea5dd2",
+    "name": "(success) (base) (f)Login",
+    "commands": [{
+      "id": "aa34db12-3c96-4dae-8e5d-01754223b992",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1/wordpress/wp-login.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "01f40292-c3c1-4fc7-98d3-50fa6a52ea6d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "784x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b49c55e-da80-48a2-9f58-01a6302998b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=user_login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8582c8e3-5d89-4873-a960-d3ba234686cd",
+      "comment": "",
+      "command": "type",
+      "target": "id=user_login",
+      "targets": [],
+      "value": "${AUTH_USERNAME}"
+    }, {
+      "id": "fe80a629-2615-4e5d-8204-a83ce85e4a0f",
+      "comment": "",
+      "command": "click",
+      "target": "id=user_pass",
+      "targets": [
+        ["id=user_pass", "id"],
+        ["name=pwd", "name"],
+        ["css=#user_pass", "css:finder"],
+        ["xpath=//input[@id='user_pass']", "xpath:attributes"],
+        ["xpath=//form[@id='loginform']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "157a2e2d-5e20-4dde-93c0-900c4b073e03",
+      "comment": "",
+      "command": "type",
+      "target": "id=user_pass",
+      "targets": [],
+      "value": "${AUTH_PASSWORD}"
+    }, {
+      "id": "2803a88f-4f9a-45b3-83a6-c1aea261aebb",
+      "comment": "",
+      "command": "click",
+      "target": "id=wp-submit",
+      "targets": [
+        ["id=wp-submit", "id"],
+        ["name=wp-submit", "name"],
+        ["css=#wp-submit", "css:finder"],
+        ["xpath=//input[@id='wp-submit']", "xpath:attributes"],
+        ["xpath=//form[@id='loginform']/p[3]/input", "xpath:idRelative"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "04d25e31-232f-4dad-91f8-f60e4a86f2a6",
+    "name": "Authentication",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b0d91bd4-6ae6-411e-84fb-199e4058cc12", "dac173d1-bbc6-4b22-a493-8724ed08a839", "0ce57f31-1b16-40ad-bcf6-82a71f41242d"]
+  }],
+  "urls": ["http://127.0.0.1/wordpress/wp-login.php"],
+  "plugins": []
+}
